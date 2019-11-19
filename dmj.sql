@@ -47,4 +47,37 @@ INSERT INTO dmj_carousel_item VALUES(NULL,"图片路径","跳转链接","我的�
 INSERT INTO dmj_carousel_item VALUES(NULL,"图片路径","跳转链接","高分少女 第二季","曾与你一起游玩的朋友");
 
 #轮播图右侧推荐区域
+CREATE TABLE dmj_right_carousel(
+	rid INT PRIMARY KEY AUTO_INCREMENT,
+	pic VARCHAR(128),
+	url VARCHAR(128),
+	title VARCHAR(128),
+	bottom_text VARCHAR(128)
+);
+INSERT INTO dmj_right_carousel VALUES(NULL,"图片路径","跳转链接","提示文字","底部信息");
+INSERT INTO dmj_right_carousel VALUES(NULL,"图片路径","跳转链接","提示文字","底部信息");
+INSERT INTO dmj_right_carousel VALUES(NULL,"图片路径","跳转链接","提示文字","底部信息");
+INSERT INTO dmj_right_carousel VALUES(NULL,"图片路径","跳转链接","提示文字","底部信息");
+
+#用户信息表
+CREATE TABLE dmj_user(
+	uid INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	uname VARCHAR(64),
+	upwd VARCHAR(64),
+	phone VARCHAR(16),
+	email VARCHAR(128),
+	gender BOOL,
+	user_name VARCHAR(64),
+	avatar VARCHAR(128)
+);
+INSERT INTO dmj_user VALUES(NULL,"root","root1234","11122223333","root@qq.com","1","admin","图片路径");
+INSERT INTO dmj_user VALUES(NULL,"root2","root1234","22233334444","root2@qq.com","1","admin","图片路径");
+
+
+
+
+
+
+
+
 
