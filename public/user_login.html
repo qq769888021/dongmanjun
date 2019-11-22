@@ -158,10 +158,10 @@
 		<div class="bt_line"></div>
 		<div class="login_text">登录</div>
 		<div class="login_box">
-			<input type="text" id="uname">
-			<div id="uname_msg">用户名不能为空</div>
-			<input type="text" id="upwd">
-			<div id="upwd_msg">密码不能为空</div>
+			<input type="text" id="uname" placeholder="请输入用户名/手机号">
+			<div id="uname_msg"></div>
+			<input type="password" id="upwd" placeholder="请输入您的密码">
+			<div id="upwd_msg"></div>
 			<div class="remember">
 				<input type="checkbox" id="remember_me">
 				<label for="remember_me">记住我
@@ -169,9 +169,39 @@
 				</label>
 				<a href="">忘记密码?</a>
 			</div>
-			<button>登录</button>
+			<button onclick="login()">登录</button>
 			<button>注册</button>
 		</div>
 	</div>
+	<script>
+		login=()=>{
+			var $uname=uname.value;
+			var $upwd=upwd.value;
+			if(!$uname){
+				uname_msg.innerHTML="用户名不能为空";
+				return;
+			}
+			if(!$upwd){
+				upwd_msg.innerHTML="密码不能为空";
+				return;
+			}
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=()=>{
+				if(xhr.readyState==4 && xhr.status==200){
+					var result=xhr.responseText;
+					console.log(result);
+					if(result==1){
+						alert("登陆成功");
+					}else if(result==0){
+						alert("登陆失败,账号或密码错误");
+					}else{
+						alert("未接收到用户名或密码");
+					}
+				}
+			}
+			xhr.open("get","/user/v1/user_login/"+$uname+"&"+$upwd,true);
+			xhr.send();
+		}
+	</script>
 </body>
 </html>
