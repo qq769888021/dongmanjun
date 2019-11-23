@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing:border-box;
+		}
+		.container nav{
+			background:rgba(255,255,255,.4);
+			box-shadow:0px 1px 3px 1px rgba(0,0,0,.1);
+		}
+		ul.navbar{
+			width: 1200px;
+			margin:0 auto;
+			height: 40px;
+		}
+		ul.navbar::after{
+			content:"";
+			display:block;
+			clear:both;
+		}
+		.navbar li{
+			float:left;
+			list-style:none;
+		}
+		.navbar li a{
+			color:black;
+			display:block;
+			height:40px;
+			text-decoration:none;
+			font:500 13px/40px "microsoft yahei";
+			padding:0 10px;
+			border-bottom-left-radius:4px;
+			border-bottom-right-radius:4px;
+		}
+		.navbar li a:hover{
+			background:#0aa0d8;
+			color:white;
+			height:42px;
+		}
+		.navbar li input,.navbar li img{
+			display:block;
+		}
+		.search_box{
+			border:1px solid #ddd;
+			border-radius:3px;
+			width: 260px;
+			height: 30px;
+			background:#eee;
+			margin-top:5px;
+			padding:0 5px;
+			position:relative;
+		}
+		li.search_box input{
+			height: 25px;
+			width: 230px;
+			margin-top:2px;
+			background:#eee;
+			border:0;
+			outline:0;
+		}
+		.search_box img{
+			width: 18px;
+			position:absolute;
+			right:1px;
+			top:4px;
+			cursor:pointer;
+		}
+		.search_box img.btn_search:hover{
+			display:none;
+		}
+		.search_box img.btn_hover:hover{
+			z-index:100;
+		}
+		div.container{
+			background-image:url(../image/logo/page_top.png);
+			background-repeat:no-repeat;
+			background-position:center;
+			height:180px;
+		}
+		div.header_line{
+			margin-top:141px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav>
+			<ul class="navbar">
+				<li>
+					<a href="#">主站</a>
+				</li>
+				<li>
+					<a href="#">番剧索引</a>
+				</li>
+				<li>
+					<a href="#">新番时间表</a>
+				</li>
+				<li>
+					<a href="#">完结番剧</a>
+				</li>
+				<li>
+					<a href="#">剧场/OVA</a>
+				</li>
+				<li>
+					<a href="#">动漫资讯</a>
+				</li>
+				<li>
+					<a href="#">漫菌商城</a>
+				</li>
+				<li class="search_box">
+					<input type="text">
+					<img class="btn_hover" src="../image/btn/search_hover.png" alt="">
+					<img class="btn_search" src="../image/btn/search.png" alt="">
+				</li>
+				<li>
+					<a href="#">登录</a>
+				</li>
+				<li>
+					<a href="#">历史</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="header_line"></div>
+	</div>
+</body>
+</html>

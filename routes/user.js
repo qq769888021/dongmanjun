@@ -21,15 +21,10 @@ router.get("/v1/user_login/:uname&:upwd",(req,res)=>{
 
 //用户注册模块
 /*
-router.post("/v1/user_reg/uname&upwd",(req,res)=>{
-	let $uname=req.body.uname;
-	let $upwd=req.body.upwd;
-	let $phone=req.body.phone;
-	let $email=req.body.email;
-	let $gender=req.body.gender;
-	let $user_name=req.body.user_name;
-	let sql="insert into dmj_user set uid=null uname=?,wpwd=?,phone=?,email=?,gender=?,user_name=?";
-	pool.query(sql,[$uname,$upwd,$phone,$email,$gender,$user_name],(err,result)=>{
+router.post("/v1/user_reg",(req,res)=>{
+	let obj=req.body
+	let sql="insert into dmj_user set ?";
+	pool.query(sql,[obj],(err,result)=>{
 		if(err) throw err;
 		console.log(result);
 		res.send("1");
