@@ -14,7 +14,7 @@
 			height: 180px;
 		}
 		div.bt_line{
-			width: 700px;
+			width: 800px;
 			height: 50px;
 			border-bottom:1px solid #ddd;
 			margin:0 auto -29px;
@@ -26,13 +26,128 @@
 			background:#fff;
 			width: 106px;
 		}
+		div.reg_box{
+			background:#0ff;
+			width: 800px;
+			height: 700px;
+			margin:0 auto;
+		}
+		.reg_box ul{
+			list-style:none;
+			float:left;
+			margin-top:40px;
+		}
+		.reg_box ul li{
+			height:50px;
+			margin:5px 0;
+			line-height:50px;
+		}
+		.reg_box .reg_item{
+			width:80px;
+			background:red;
+			text-align:right;
+			margin-left:155px;
+		}
+		.reg_box .reg_input input.my_width{
+			height: 50px;
+			height: 38px;
+			width: 300px;
+			margin:0 15px;
+			border-radius:4px;
+			border:1px solid #ddd;
+			padding:0 10px;
+		}
+		input#man,input#woman{
+			margin-left:15px;
+		}
+		label.label_man{
+			margin-left:20px;
+		}
+		ul.reg_msg_box{
+			font-size:12px;
+			color:#00a0d8;
+		}
 	</style>
 </head>
 <body>
 	<div class="container">
-		<iframe class="header" src="public_header.html" frameborder="0"></iframe>
+		<iframe class="header" src="public_header.html" scrolling="no" frameborder="0"></iframe>
 		<div class="bt_line"></div>
 		<div class="reg_text">注册</div>
+		<div class="reg_box">
+			<ul class="reg_item">
+				<li>用户名:</li>
+				<li>密码:</li>
+				<li>确认密码:</li>
+				<li>电话:</li>
+				<li>用户邮箱:</li>
+				<li>性别:</li>
+				<li>真实姓名:</li>
+				<li>头像:</li>
+			</ul>
+			<ul class="reg_input">
+				<li>
+					<input class="my_width" type="text">
+				</li>
+				<li>
+					<input class="my_width" type="password">
+				</li>
+				<li>
+					<input class="my_width" type="password">
+				</li>
+				<li>
+					<input class="my_width" type="text">
+				</li>
+				<li>
+					<input class="my_width" type="text">
+				</li>
+				<li>
+					<label class="label_man" for="man">
+						<input name="sex" id="man" type="radio" checked>男
+					</label>
+					<label for="woman">
+						<input name="sex" id="woman" type="radio">女
+					</label>
+				</li>
+				<li>
+					<input class="my_width" type="text">
+				</li>
+				<li>
+					<input class="my_width" type="text">
+				</li>
+			</ul>
+			<ul class="reg_msg_box">
+				<li>
+					<span>格式错误:密码长度为10~12位</span>
+				</li>
+				<li>
+					<span>格式错误:密码长度为10~12位</span>
+				</li>
+				<li>
+					<span>格式错误:密码长度为10~12位</span>
+				</li>
+				<li>
+					<span>格式错误:密码长度为10~12位</span>
+				</li>
+				<li>
+					<span>格式错误:密码长度为10~12位</span>
+				</li>
+				<li>
+					<span>格式错误:密码长度为10~12位</span>
+				</li>
+				<li>
+					<span>格式错误:密码长度为10~12位</span>
+				</li>
+				<li>
+					<span>格式错误:密码长度为10~12位</span>
+				</li>
+			</ul>
+		</div>
+		<div class="agree">
+			<input type="checkbox">我已同意
+			<span></span>《动漫菌视频网用户使用协议》和《动漫菌隐私政策》
+		</div>
+		<button>注册</button>
 	</div>
 </body>
 </html>
