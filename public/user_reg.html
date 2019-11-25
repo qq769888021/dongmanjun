@@ -3,8 +3,36 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			box-sizing:border-box;
+		}
+		.container iframe.header{
+			width: 100%;
+			height: 180px;
+		}
+		div.bt_line{
+			width: 700px;
+			height: 50px;
+			border-bottom:1px solid #ddd;
+			margin:0 auto -29px;
+		}
+		div.reg_text{
+			margin:0 auto;
+			font-size:38px;
+			padding:0 15px;
+			background:#fff;
+			width: 106px;
+		}
+	</style>
 </head>
 <body>
-	<div class="container"></div>
+	<div class="container">
+		<iframe class="header" src="public_header.html" frameborder="0"></iframe>
+		<div class="bt_line"></div>
+		<div class="reg_text">注册</div>
+	</div>
 </body>
 </html>

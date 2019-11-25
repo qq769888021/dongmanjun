@@ -19,6 +19,20 @@ router.get("/v1/user_login/:uname&:upwd",(req,res)=>{
 	});
 });
 
+//用户名查重
+router.get("/v1/search_uname/:uname",(req,res)=>{
+	let $uname=req.params.uname;
+	let sql="select uname from dmj_user where uname=?"
+	pool.query(sql,[$uname],(err,result)=>{
+		if(err) throw err;
+		if(result.length>0){
+			res.send("0");
+		}else{
+			res.send("1");
+		}
+	});
+});
+
 //用户注册模块
 /*
 router.post("/v1/user_reg",(req,res)=>{
