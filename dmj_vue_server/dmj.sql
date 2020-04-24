@@ -72,6 +72,9 @@ CREATE TABLE dmj_user(
 );
 INSERT INTO dmj_user VALUES(NULL,"root","root1234","11122223333","root@qq.com","1","admin","图片路径");
 INSERT INTO dmj_user VALUES(NULL,"root2","root1234","22233334444","root2@qq.com","1","admin","图片路径");
+INSERT INTO dmj_user VALUES(NULL,"dingding","123456","22233334444","root2@qq.com","1","admin","图片路径");
+INSERT INTO dmj_user VALUES(NULL,"liangliang","123456","22233334444","root2@qq.com","1","admin","图片路径");
+INSERT INTO dmj_user VALUES(NULL,"dongdong","123456","22233334444","root2@qq.com","1","admin","图片路径");
 
 
 

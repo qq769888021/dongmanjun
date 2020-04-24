@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import index from '../views/index.vue'
-import login from '../views/login.vue'
+
 
 Vue.use(VueRouter)
 
 const routes = [
-  {path: '/login',component: login},
+  {path: '/detail',component:()=>import("../views/detail.vue")},
+  {path: '/reg',component:()=>import("../views/reg.vue")},
   {path: '/',component: index},
   {path: '/login',
     // route level code-splitting

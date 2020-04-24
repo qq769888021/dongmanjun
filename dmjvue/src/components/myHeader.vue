@@ -1,27 +1,29 @@
 <template>
-  	<div class="container">
+	<div class="container">
+		<table></table>
+		<div class="navBack"></div>
 		<nav>
 			<ul class="navbar">
 				<li>
-					<a href="#">主站</a>
+					<router-link to="/">商城主页</router-link>
 				</li>
 				<li>
-					<a href="#">番剧索引</a>
+					<router-link to="">购物车</router-link>
 				</li>
 				<li>
-					<a href="#">新番时间表</a>
+					<router-link to="">我的订单</router-link>
 				</li>
 				<li>
-					<a href="#">完结番剧</a>
+					<router-link to="">联系客服</router-link>
 				</li>
 				<li>
-					<a href="#">剧场/OVA</a>
+					<router-link to="">站内信</router-link>
 				</li>
 				<li>
-					<a href="#">动漫资讯</a>
+					<router-link to="">视频站</router-link>
 				</li>
 				<li>
-					<a href="#">漫菌商城</a>
+					<router-link to="">关注我们</router-link>
 				</li>
 				<li class="search_box">
 					<input type="text">
@@ -29,10 +31,10 @@
 					<img class="btn_search" src="http://127.0.0.1:5518/image/btn/search.png" alt="">
 				</li>
 				<li>
-					<a href="#">登录</a>
+					<router-link to="login">登录</router-link>
 				</li>
 				<li>
-					<a href="#">历史</a>
+					<router-link to="reg">注册</router-link>
 				</li>
 			</ul>
 		</nav>
@@ -52,13 +54,36 @@ export default {
 			padding: 0;
 			box-sizing:border-box;
 		}
+		.container{
+			position:relative;
+		}
+		.container .navBack{
+			background-image:url(http://127.0.0.1:5518/image/header/home-banner01.b22485d.jpg);
+			background-position: center top;
+			background-repeat: no-repeat;
+			height:40px;
+			width:100%;
+			filter: blur(4px);
+		}
 		.container nav{
+			position: absolute;
+			top:0;
+			width:100%;
+			z-index: 100;
 			background:rgba(255,255,255,.4);
 			box-shadow:0px 1px 3px 1px rgba(0,0,0,.1);
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-around;
+			align-items: center;
 		}
 		ul.navbar{
-			width: 1200px;
+			width: 100%;
 			margin:0 auto;
+			display: flex;
+			flex-flow:row nowrap;
+			justify-content: center;
+			align-items: center;
 			height: 40px;
 		}
 		ul.navbar::after{
@@ -67,7 +92,6 @@ export default {
 			clear:both;
 		}
 		.navbar li{
-			float:left;
 			list-style:none;
 		}
 		.navbar li a{
@@ -79,6 +103,7 @@ export default {
 			padding:0 10px;
 			border-bottom-left-radius:4px;
 			border-bottom-right-radius:4px;
+			transition: all .3s;
 		}
 		.navbar li a:hover{
 			background:#0aa0d8;
@@ -94,7 +119,6 @@ export default {
 			width: 260px;
 			height: 30px;
 			background:#eee;
-			margin-top:5px;
 			padding:0 5px;
 			position:relative;
 		}
@@ -120,7 +144,8 @@ export default {
 			z-index:100;
 		}
 		div.container{
-			background-image:url(http://127.0.0.1:5518/image/logo/page_top.png);
+			z-index: 50;
+			background-image:url(http://127.0.0.1:5518/image/header/home-banner01.b22485d.jpg);
 			background-repeat:no-repeat;
 			background-position:center;
 			height:180px;

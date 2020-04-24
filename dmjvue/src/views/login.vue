@@ -3,13 +3,13 @@
 		<div class="bt_line"></div>
 		<div class="login_text">登录</div>
 		<div class="login_box">
-			<input type="text" id="uname" placeholder="请输入用户名/手机号" v-model="userName">
-			<div id="uname_msg">
-				<span>用户名不能为空</span>
+			<input type="text" class="uname" placeholder="请输入用户名/手机号" v-model="userName" @blur="unameBlur">
+			<div class="uname_msg">
+				<span v-show="!unameShow">用户名不能为空</span>
 			</div>
-			<input type="password" id="upwd" placeholder="请输入您的密码" v-model="userPwd">
-			<div id="upwd_msg">
-				<span>密码不能为空</span>
+			<input type="password" class="upwd" placeholder="请输入您的密码" v-model="userPwd" @blur="upwdBlur">
+			<div class="upwd_msg">
+				<span v-show="!upwdShow">密码不能为空</span>
 			</div>
 			<div class="remember">
 				<input type="checkbox" id="remember_me">
@@ -19,7 +19,7 @@
 				<a href="">忘记密码?</a>
 			</div>
 			<button @click="login">登录</button>
-			<button>注册</button>
+			<button @click="goReg">注册</button>
 		</div>
 	</div>
 </template>
@@ -29,19 +29,46 @@ export default {
   data(){
 		return {
 			userName:"",
-			userPwd:""
+			userPwd:"",
+			unameShow:true,
+			upwdShow:true
 		}
 	},
 	methods:{
-		testThis(n){
-			n==testUname&&(userName.length>0)?(testUname=false):(testUname=true);
-			(userPwd.length>0)?(testUpwd=false):(testUpwd=true)
+		goReg(){
+			this.$router.push("/reg");
+		},
+		upwdBlur(){
+			this.upwdShow=(this.userPwd.length>0)
+		},
+		unameBlur(){
+			this.unameShow=(this.userName.length>0)
 		},
 		login(){
-			
+			var $uname=this.userName;
+			var $upwd=this.userPwd;
+			if($uname.length>0){
+				if($upwd.length>0){
+					var url="user/v1/user_login"
+					var obj={uname:$uname,upwd:$upwd}
+					this.axios.get(url,{params:obj}).then(result=>{
+						console.log(obj);
+
+						if(result.data.code==1){
+							alert("登录成功");
+							this.$router.push("/");
+						}else{
+							alert("用户名或密码有误,请核对后再登录");
+						}
+					});
+				}else{
+					this.upwdShow=false;
+				}
+			}else{
+				this.unameShow=false;
+			}
 		}
-	},
-	
+	}
 }
 </script>
 
@@ -76,14 +103,14 @@ export default {
 			text-align:center;
 			padding:40px 50px 0;
 		}
-		div.login_box input#uname,div.login_box input#upwd{
+		div.login_box input.uname,div.login_box input.upwd{
 			width:100%;
 			height: 40px;
 			padding:0 10px;
 			border-radius:4px;
 			border:1px solid #ddd;
 		}
-		div.login_box #uname_msg,div.login_box #upwd_msg{
+		div.login_box .uname_msg,div.login_box .upwd_msg{
 			height:40px;
 			text-align:left;
 			font-size:14px;
